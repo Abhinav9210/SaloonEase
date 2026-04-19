@@ -1,0 +1,15 @@
+package com.saloon.entity.enums;
+
+public enum NotificationType {
+    BOOKING_CREATED,
+    BOOKING_APPROVED,
+    BOOKING_REJECTED,
+    BOOKING_COMPLETED,
+    BOOKING_CANCELLED,
+    BOOKING_EXPIRED,
+    PAYMENT_SUCCESS,
+    PAYMENT_FAILED,
+    SALON_APPROVED,
+    SALON_REJECTED,
+    GENERAL
+}

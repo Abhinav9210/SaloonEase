@@ -1,0 +1,54 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/saloon_booking
+    username: postgres
+    password: 1416
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:noreply@saloon.com}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    test-connection: false
+
+jwt:
+  secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
+  expiration: 86400000  # 24 hours in milliseconds
+  refresh-expiration: 604800000  # 7 days
+
+app:
+  name: Saloon Booking
+  booking:
+    auto-cancel-minutes: 30
+  cors:
+    allowed-origins: http://localhost:5173,http://localhost:3000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+
+logging:
+  level:
+    com.saloon: DEBUG
+    org.springframework.security: INFO
+    org.hibernate.SQL: WARN
