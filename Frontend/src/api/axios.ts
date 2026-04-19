@@ -2,8 +2,10 @@ import axios from 'axios'
 import { store } from '../app/store'
 import { logout } from '../features/auth/authSlice'
 
+const API = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${API}/api`,
   headers: { 'Content-Type': 'application/json' },
   timeout: 15000,
 })
